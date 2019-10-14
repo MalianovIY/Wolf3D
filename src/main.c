@@ -15,7 +15,7 @@
 void	err_exit(t_wf *wf, int c)
 {
 	if (c == 10)
-		ft_free2d(&(wf->map));
+		ft_free2d((void ***)&(wf->map));
 	if (c == 0)
 		printf("err_file_map\n");
 	exit(0);
@@ -23,20 +23,24 @@ void	err_exit(t_wf *wf, int c)
 
 void	move(t_wf *wf, int key)
 {
-	if (key == 0)
-		wf->player.v[0] += 0.01;
-	if (key == 2)
-		wf->player.v[0] -= 0.01;
-	if (key == 13)
-		wf->player.v[1] += 0.01;
-	if (key == 1)
-		wf->player.v[1] -= 0.01;
+	float	p1, p2;
+
+	p1 = wf->player.v[0];
+	p2 = wf->player.v[1];
+	if (key == 0 && wf->map[(int)(p2)][(int)(p1 + 0.11)] == ' ')
+		wf->player.v[0] += 0.1;
+	else if (key == 2 && wf->map[(int)(p2)][(int)(p1 - 0.11)] == ' ')
+		wf->player.v[0] -= 0.1;
+	else if (key == 13 && wf->map[(int)(p2 + 0.11)][(int)(p1)] == ' ')
+		wf->player.v[1] += 0.1;
+	else if (key == 1 && wf->map[(int)(p2 - 0.11)][(int)(p1)] == ' ')
+		wf->player.v[1] -= 0.1;
 	if (key == 53)
 		err_exit(wf, 10);
 }
 void	rotation(t_wf *wf, int key, float ang)
 {
-	exit(0);
+	wf->player.v[2] = key > 123 ? wf->player.v[2] + ang : wf->player.v[2] - ang;
 }
 
 void    draw_point(t_wf *wf, int x, int y, t_int4 p)
@@ -92,20 +96,6 @@ void	readmap(t_wf *wf, char *filename)
 	wf->player = gm_init_float(6, 6, 0, 0);
 }
 
-int             deal_key(int key, void *param)
-{
-	t_wf    *wf;
-
-	wf = (t_wf *)param;
-	if (key == 53 || key == 13 || key == 1 || key == 2 || key == 0)
-		move(wf, key);
-	else if (key == 123 || key == 125)
-		rotation(wf, key, M_PI / 18);
-	wf->mlx.img = mlx_new_image(wf->mlx.mlx, wf->scr.v[0], wf->scr.v[1]);
-	wf->mlx.string = mlx_get_data_addr(wf->mlx.img,
-			&(wf->mlx.bit_per_pix), &(wf->mlx.size_len), &(wf->mlx.endian));
-	return (0);
-}
 
 void draw_rectangle(t_wf *wf, t_int4 pos_w, t_int4 color)
 {
@@ -118,6 +108,61 @@ void draw_rectangle(t_wf *wf, t_int4 pos_w, t_int4 color)
 		while (++j < pos_w.v[3])
 			draw_point(wf, pos_w.v[0] + i, pos_w.v[1] + j, color);
 	}
+}
+
+void	calc(t_wf *wf)
+{
+	float	hb, vb, alpha, c, x, y;
+	int		i, j;
+
+	hb = wf->scr.v[0] / 10;
+	vb = wf->scr.v[1] / 10;
+	j = -1;
+	while (++j < 10)
+	{
+		i = -1;
+		while (++i < 10)
+			if (wf->map[i][j] == ' ')
+				continue ;
+			else
+				draw_rectangle(wf, gm_init_int(hb * j, vb * i, hb - 1, vb - 1),
+						gm_init_int(0, 240, 145, 0));
+	}
+	alpha = - 0.52359877559;
+	while (alpha < 0.52359877559)
+	{
+		c = 0;
+		while (c < 20)
+		{
+			alpha;
+			x = wf->player.v[0] + c * cos(wf->player.v[2] + alpha);
+			y = wf->player.v[1] + c * sin(wf->player.v[2] + alpha);
+			if (wf->map[(int)y][(int)x] != ' ')
+				break;
+			draw_point(wf,  x * hb, y * vb, gm_init_int(0, 225, 255, 255));
+			c += 0.0125;
+		}
+		alpha += .001;
+	}
+	draw_rectangle(wf, gm_init_int((wf->player.v[0]) * hb - 2,  (wf->player.v[1]) * vb - 2, 4, 4), gm_init_int(0, 0, 255, 255));
+	image_to_win(wf);
+}
+
+
+int             deal_key(int key, void *param)
+{
+	t_wf    *wf;
+
+	wf = (t_wf *)param;
+	if (key == 53 || key == 13 || key == 1 || key == 2 || key == 0)
+		move(wf, key);
+	else if (key == 123 || key == 124)
+		rotation(wf, key, M_PI / 36);
+	wf->mlx.img = mlx_new_image(wf->mlx.mlx, wf->scr.v[0], wf->scr.v[1]);
+	wf->mlx.string = mlx_get_data_addr(wf->mlx.img,
+			&(wf->mlx.bit_per_pix), &(wf->mlx.size_len), &(wf->mlx.endian));
+	calc(wf);
+	return (0);
 }
 
 int		main(int argc, char *argv[])
@@ -140,37 +185,7 @@ int		main(int argc, char *argv[])
 						gm_init_int(0, 0, (255 * (float)((float)j / (float)wf.scr.v[0])),
 								(255 * (float)((float)i / (float)wf.scr.v[1]))));
 		}
-		hb = wf.scr.v[0] / 10;
-		vb = wf.scr.v[1] / 10;
-		j = -1;
-		while (++j < 10)
-		{
-			i = -1;
-			while (++i < 10)
-				if (wf.map[i][j] == ' ')
-					continue ;
-				else
-					draw_rectangle(&wf, gm_init_int(hb * j, vb * i, hb - 1, vb - 1),
-							gm_init_int(0, 240, 145, 0));
-		}
-		alpha = 0;
-		while (alpha < 2 * M_PI)
-		{
-			c = 0;
-			while (c < 20)
-			{
-				alpha;
-				x = wf.player.v[0] + c * cos(wf.player.v[2] + alpha);
-				y = wf.player.v[1] + c * sin(wf.player.v[2] + alpha);
-				if (wf.map[(int)y][(int)x]!=' ')
-					break;
-				draw_point(&wf,  x * hb, y * vb, gm_init_int(0, 225, 255, 255));
-				c += 0.0125;
-			}
-			alpha += .01;
-		}
-		draw_rectangle(&wf, gm_init_int((wf.player.v[0]) * hb - 2,  (wf.player.v[1]) * vb - 2, 4, 4), gm_init_int(0, 0, 255, 255));
-		image_to_win(&wf);
+		calc(&wf);
 		mlx_hook(wf.mlx.win, 2, 5, deal_key, &wf);
 		mlx_loop(wf.mlx.mlx);
 	}
