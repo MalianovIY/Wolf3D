@@ -29,28 +29,18 @@ typedef struct		s_mlx
 {
 	void			*mlx;
 	void			*win;
+	void			*win2;
 	void			*img;
+	void			*img2;
 	int				bit_per_pix;
 	int				size_len;
 	int				endian;
 	char			*string;
+	int				bit_per_pix2;
+	int				size_len2;
+	int				endian2;
+	char			*string2;
 }					t_mlx;
-
-typedef enum		e_light_type
-{					ambient, point, dir
-}					t_light_type;
-
-typedef enum		e_obj_type
-{					cone, sphere, plane, cylinder
-}					t_obj_type;
-
-typedef struct		s_light
-{
-	t_int4			id;
-	t_light_type	type;
-	t_float4		pos;
-	float			intn;
-}					t_light;
 
 typedef struct		s_wf
 {
@@ -58,6 +48,7 @@ typedef struct		s_wf
 	t_int4			**image;
 	t_float4		player;
 	char			**map;
+	t_int4			sm;
 	t_int4			scr;
 	t_mat4			t;
 	t_float4		o;
