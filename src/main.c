@@ -123,10 +123,10 @@ void	readmap(t_wf *wf, char *filename)
 	while (++i < 10)
 		wf->map[i] = (char *)malloc(11 * sizeof(char));
 	ft_memcpy(wf->map[0], "1111111111\0", 11);
-	ft_memcpy(wf->map[1], "1   1    1\0", 11);
+	ft_memcpy(wf->map[1], "1        1\0", 11);
 	ft_memcpy(wf->map[2], "1   2    1\0", 11);
-	ft_memcpy(wf->map[3], "1   1    1\0", 11);
-	ft_memcpy(wf->map[4], "1   111211\0", 11);
+	ft_memcpy(wf->map[3], "1        1\0", 11);
+	ft_memcpy(wf->map[4], "1      1 1\0", 11);
 	ft_memcpy(wf->map[5], "1        1\0", 11);
 	ft_memcpy(wf->map[6], "1  3     1\0", 11);
 	ft_memcpy(wf->map[7], "1     1  1\0", 11);
@@ -205,7 +205,7 @@ void	calc(t_wf *wf)
 {
 	float	hb, vb, alpha;// x, y;
 	float	c, x1, y1;
-	int		x, y, color;
+	int		color;
 	t_int4	d;
 
 	hb = 0.523599 / wf->scr.v[0];
@@ -225,18 +225,15 @@ void	calc(t_wf *wf)
 			c += 0.001;
 		}
 		color = (color + 30) << 3;
-		x = x1;
-		y = y1;
-		if (fabs(y1 - y) > fabs(x1 - x)) 				//TODO* понять как зависит направление просмотра стенки от x, y, alpha
-			d = alpha > M_PI ? gm_init_int(0, color, 0, color) : gm_init_int(0, 0, color, color);
+		if (fabsf(y1 - roundf(y1)) > fabs(x1 - roundf(x1)))
+			d = cos(wf->player.v[2] + alpha) > 0 ? gm_init_int(0, color, 0, 0)
+					: gm_init_int(0, 0, 0, color);
 		else
-			d = alpha > M_PI ? gm_init_int(0, color, color, 0) : gm_init_int(0, 0, color + 10, 0);
+			d = sin(wf->player.v[2] + alpha) > 0 ? gm_init_int(0, 0, color, 0)
+					: gm_init_int(0, color, color, 0);
 		c = ((wf->sm.v[2] * wf->sm.v[2]) << 3) / c;
 		draw_rectangle(wf, gm_init_int((int)((alpha + 0.261799) * vb),
 				 wf->scr.v[3] - (((int) c) >> 1), 1, c), d);
-//				gm_init_int(0, 255, 255, 255));
-		if ((int)(alpha * 10000) == 0)
-			printf("%f\t%f\t", y1, x1);
 		alpha += hb;
 	}
 	printf("%f\n", wf->player.v[2]);
@@ -254,7 +251,7 @@ int             deal_key(int key, void *param)
 	if (key == 53 || key == 13 || key == 1 || key == 2 || key == 0)
 		move(wf, key);
 	else if (key == 123 || key == 124)
-		rotation(wf, key, M_PI / 36);
+		rotation(wf, key, 0.08726646259);
 	wf->mlx.img = mlx_new_image(wf->mlx.mlx, wf->scr.v[0], wf->scr.v[1]);
 	wf->mlx.string = mlx_get_data_addr(wf->mlx.img,
 			&(wf->mlx.bit_per_pix), &(wf->mlx.size_len), &(wf->mlx.endian));
@@ -270,21 +267,11 @@ int		main(int argc, char *argv[])
 	t_wf		wf;
 	int 		i, j;
 
-	printf("%f %d \n %f %d\n%f %d \n %f %d\n", 10.1, (int)10.1, -10.1, (int)-10.1, 10.8, (int)10.8, -10.8, (int)-10.8);
 	if (argc == 2)
 	{
 		readmap(&wf, argv[1]);
 		wf.scr = gm_init_int(600, 600, 300, 300);
 		init_mlx(&wf);
-//		j = -1;
-//		while (++j < wf.scr.v[0])
-//		{
-//			i = -1;
-//			while (++i < wf.scr.v[1])
-//				draw_point(&wf, i, j,
-//						gm_init_int(0, 0, (255 * (float)((float)j / (float)wf.scr.v[0])),
-//								(255 * (float)((float)i / (float)wf.scr.v[1]))));
-//		}
 		calc(&wf);
 		mlx_hook(wf.mlx.win2, 2, 5, deal_key, &wf);
 		mlx_hook(wf.mlx.win, 2, 5, deal_key, &wf);
