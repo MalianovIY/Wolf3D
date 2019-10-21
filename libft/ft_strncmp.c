@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/27 22:42:03 by ahorker           #+#    #+#             */
-/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 21:35:09 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/18 16:13:14 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				o;
-	unsigned char	*c1;
-	unsigned char	*c2;
+	size_t			i;
+	unsigned char	*st1;
+	unsigned char	*st2;
 
 	if (n == 0)
 		return (0);
-	c1 = (unsigned char *)s1;
-	c2 = (unsigned char *)s2;
-	o = *c1 - *c2;
-	n--;
-	while (!(o) && n-- && *c1 && *c2)
-		o = *(++c1) - *(++c2);
-	return (o);
+	st1 = (unsigned char*)s1;
+	st2 = (unsigned char*)s2;
+	i = 0;
+	while (st1[i] == st2[i] && st1[i] != '\0' && st2[i] != '\0' && i < n - 1)
+	{
+		i++;
+	}
+	return (st1[i] - st2[i]);
 }

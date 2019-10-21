@@ -3,25 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 21:23:58 by ahorker           #+#    #+#             */
-/*   Updated: 2018/12/16 06:35:46 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 20:07:35 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/11 20:07:56 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int ch)
 {
-	if ((c <= 'Z') && (c >= 'A'))
-		return (1);
-	else if ((c >= 'a') && (c <= 'z'))
-		return (1);
-	else if ((c >= '0') && (c <= '9'))
-		return (1);
-	else if ((c > ' ') && (c <= 126))
-		return (1);
-	else if (c == ' ')
-		return (1);
-	else
-		return (0);
+	return (ch > 31 && ch < 127);
 }

@@ -3,28 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 17:29:17 by ahorker           #+#    #+#             */
-/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 21:25:27 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/18 17:27:58 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-int	ft_strequ(const char *s1, const char *s2)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	unsigned char	*c1;
-	unsigned char	*c2;
+	int i;
 
-	c1 = (unsigned char *)s1;
-	c2 = (unsigned char *)s2;
-	if (c1 == NULL || c2 == NULL)
-		return (0);
-	while (*c1 && *c2)
-		if (*c1++ != *c2++)
+	i = 0;
+	if (s1 && s2)
+	{
+		while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		{
+			i++;
+		}
+		if (s1[i] == '\0' && s2[i] == '\0')
+			return (1);
+		else
 			return (0);
-	if ((*c1 && !(*c2)) || (!(*c1) && *c2))
-		return (0);
-	return (1);
+	}
+	return (0);
 }

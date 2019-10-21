@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 04:13:54 by ahorker           #+#    #+#             */
-/*   Updated: 2019/02/19 22:12:09 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 21:28:01 by mriley            #+#    #+#             */
+/*   Updated: 2019/05/12 17:55:12 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-char	*ft_strjoin(const char *c1, const char *c2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*o[2];
-	int		l[2];
+	size_t			s1_len;
+	size_t			s2_len;
+	size_t			summ_len;
+	char			*concat;
 
-	if (c1 == NULL || c2 == NULL)
-		return (NULL);
-	l[0] = 0;
-	l[1] = 0;
-	while (c1[l[0]])
-		l[0]++;
-	while (c2[l[1]])
-		l[1]++;
-	o[0] = (char *)ft_memalloc((l[0] + l[1] + 1) * sizeof(char));
-	if (o[0] == NULL)
-		return (NULL);
-	o[1] = o[0];
-	while (*c1)
-		*o[1]++ = *c1++;
-	while (*c2)
-		*o[1]++ = *c2++;
-	*o[1] = '\0';
-	return (o[0]);
+	if (s1 && s2)
+	{
+		s1_len = ft_strlen(s1);
+		s2_len = ft_strlen(s2);
+		if ((summ_len = s1_len + s2_len) + 1 == 0)
+			return (0);
+		concat = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+		if (concat)
+		{
+			ft_memcpy(concat, s1, s1_len);
+			ft_memcpy(concat + s1_len, s2, s2_len);
+			concat[s1_len + s2_len] = 0;
+			return (concat);
+		}
+	}
+	return (0);
 }

@@ -3,27 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <mriley@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/25 01:28:24 by ahorker           #+#    #+#             */
-/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 20:19:40 by mriley            #+#    #+#             */
+/*   Updated: 2019/05/12 18:17:13 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-void	*ft_memcpy(void *d, const void *s, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*a;
-	unsigned char	*b;
-	int 			i;
+	unsigned long	*s;
+	unsigned long	*d;
+	unsigned char	*sc;
+	unsigned char	*dc;
+	size_t			nb;
 
-	a = (unsigned char *)d;
-	b = (unsigned char *)s;
-	if (a == NULL || b == NULL)
-		return (NULL);
-	i = -1;
-	while (++i < n)
-		a[i] = b[i];
-	return (d);
+	d = (unsigned long *)dst;
+	s = (unsigned long *)src;
+	nb = n / sizeof(unsigned long);
+	while (nb--)
+		*(d++) = *(s++);
+	nb = n % sizeof(unsigned long);
+	sc = (unsigned char *)s;
+	dc = (unsigned char *)d;
+	while (nb--)
+		*(dc++) = *(sc++);
+	return (dst);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	**ft_arrnew(size_t m, size_t n, unsigned char c)
 {

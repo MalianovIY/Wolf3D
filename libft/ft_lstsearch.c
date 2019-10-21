@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 t_list	*ft_lstsearch(t_list *list, int (*f)(void *data, t_list elem), void *d)
 {

@@ -3,37 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 04:13:54 by ahorker           #+#    #+#             */
-/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 21:52:47 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/18 18:41:39 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-char	*ft_strtrim(const char *c)
+char	*ft_strtrim(char const *s)
 {
-	char	*o;
-	char	*o1;
-	int		l;
+	char	*f;
+	int		i;
+	int		y;
+	int		j;
 
-	if (c == NULL)
+	i = 0;
+	y = -1;
+	if (!s)
 		return (NULL);
-	l = 0;
-	while (*c == '\n' || *c == '\t' || *c == ' ')
-		c++;
-	while (c[l])
-		l++;
-	if (l)
-		while (c[l - 1] == '\n' || c[l - 1] == '\t' || c[l - 1] == ' ')
-			l--;
-	o = (char *)malloc((l + 1) * sizeof(char));
-	o1 = o;
-	if (o == NULL)
+	j = ft_strlen(s) - 1;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	if (s[i] != '\0')
+		while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+			j--;
+	else
+		j--;
+	j++;
+	f = (char*)malloc(sizeof(char*) * (j - i + 1));
+	if (f == NULL)
 		return (NULL);
-	while (*c)
-		*o++ = *c++;
-	o1[l] = '\0';
-	return (o1);
+	while (i <= j)
+		f[++y] = (char)s[i++];
+	f[y] = '\0';
+	return (f);
 }

@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/24 21:23:58 by ahorker           #+#    #+#             */
-/*   Updated: 2018/12/16 06:32:03 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 20:01:17 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/13 00:35:38 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int character)
 {
-	if ((c <= 'Z') && (c >= 'A'))
-		return (1);
-	else if ((c >= 'a') && (c <= 'z'))
+	if ((character > 64 && character < 91) ||
+		(character > 96 && character < 123))
 		return (1);
 	else
 		return (0);

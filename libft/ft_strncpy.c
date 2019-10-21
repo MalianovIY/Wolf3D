@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/25 01:28:24 by ahorker           #+#    #+#             */
-/*   Updated: 2019/01/26 22:51:04 by ahorker          ###   ########.fr       */
+/*   Created: 2019/04/11 21:36:57 by mriley            #+#    #+#             */
+/*   Updated: 2019/04/12 18:53:00 by mriley           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-char	*ft_strncpy(char *d, const char *s, size_t l)
+char	*ft_strncpy(char *destptr, char *srcptr, size_t num)
 {
-	unsigned char	*d1;
-	unsigned char	*s1;
+	int i;
 
-	s1 = (unsigned char*)s;
-	d1 = (unsigned char*)d;
-	if (!d || !s)
-		return (NULL);
-	while (*s1 && l)
+	i = 0;
+	while (i < (int)num)
 	{
-		*d1++ = *s1++;
-		l--;
+		if (srcptr[i] == '\0')
+		{
+			while (i < (int)num)
+			{
+				destptr[i] = '\0';
+				i++;
+			}
+		}
+		else
+		{
+			destptr[i] = srcptr[i];
+			i++;
+		}
 	}
-	while (l)
-	{
-		l--;
-		*d1++ = '\0';
-	}
-	return (d);
+	return (destptr);
 }

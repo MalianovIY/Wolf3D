@@ -13,7 +13,8 @@
 #ifndef RT_H
 # define RT_H
 
-# include "../libft/includes/libft.h"
+# include "../libft/libft.h"
+#include "../libft/get_next_line.h"
 # include "../libgm/include/libgm.h"
 
 # include <mlx.h>
@@ -42,6 +43,17 @@ typedef struct		s_mlx
 	char			*string2;
 }					t_mlx;
 
+typedef	struct		s_read
+{
+    int				fd;
+    int				**grid;
+    int				row;
+    int				column;
+    int				*z_in_grid;
+    char			*nameof;
+}                   t_read;
+
+
 typedef struct		s_wf
 {
 	t_mlx			mlx;
@@ -52,9 +64,13 @@ typedef struct		s_wf
 	t_int4			scr;
 	t_mat4			t;
 	t_float4		o;
+	t_read          reader;
 }					t_wf;
 
 void				init_mlx(t_wf *wf);
+int			        parser(t_read *parse);
+int			        alloc_tab(t_read *parse);
+int			        helper_all_tab(t_read *parse, char *line);
 
 
 #endif
