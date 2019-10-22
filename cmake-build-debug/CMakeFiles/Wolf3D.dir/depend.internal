@@ -312,12 +312,36 @@ CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o
  /Users/cmicha/Desktop/wolf3d_git/libft/libft.h
  /Users/cmicha/Desktop/wolf3d_git/libgm/gm_vec_vec_rotate.c
  /Users/cmicha/Desktop/wolf3d_git/libgm/include/libgm.h
+CMakeFiles/Wolf3D.dir/src/controls.c.o
+ ../includes/wolf3d.h
+ ../libft/get_next_line.h
+ ../libft/libft.h
+ ../libgm/include/libgm.h
+ /Users/cmicha/Desktop/wolf3d_git/src/controls.c
+CMakeFiles/Wolf3D.dir/src/drawer.c.o
+ ../includes/wolf3d.h
+ ../libft/get_next_line.h
+ ../libft/libft.h
+ ../libgm/include/libgm.h
+ /Users/cmicha/Desktop/wolf3d_git/src/drawer.c
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o
+ ../includes/wolf3d.h
+ ../libft/get_next_line.h
+ ../libft/libft.h
+ ../libgm/include/libgm.h
+ /Users/cmicha/Desktop/wolf3d_git/src/init_everything.c
 CMakeFiles/Wolf3D.dir/src/main.c.o
  ../includes/wolf3d.h
  ../libft/get_next_line.h
  ../libft/libft.h
  ../libgm/include/libgm.h
  /Users/cmicha/Desktop/wolf3d_git/src/main.c
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o
+ ../includes/wolf3d.h
+ ../libft/get_next_line.h
+ ../libft/libft.h
+ ../libgm/include/libgm.h
+ /Users/cmicha/Desktop/wolf3d_git/src/raycasting.c
 CMakeFiles/Wolf3D.dir/src/reader.c.o
  ../includes/wolf3d.h
  ../libft/get_next_line.h

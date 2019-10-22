@@ -53,6 +53,18 @@ typedef	struct		s_read
     char			*nameof;
 }                   t_read;
 
+typedef struct      s_opt
+{
+    float           hb;
+    float           vb;
+    float           alpha;
+    float           c;
+    float           x1;
+    float           y1;
+    int             x;
+    int             y;
+    int             color;
+}                   t_opt;
 
 typedef struct		s_wf
 {
@@ -65,12 +77,29 @@ typedef struct		s_wf
 	t_mat4			t;
 	t_float4		o;
 	t_read          reader;
+	t_opt           opt;
+
 }					t_wf;
+
+
 
 void				init_mlx(t_wf *wf);
 int			        parser(t_read *parse);
 int			        alloc_tab(t_read *parse);
 int			        helper_all_tab(t_read *parse, char *line);
-
-
+void	            err_exit(t_wf *wf, int c);
+void	            move(t_wf *wf, int key);
+void	            rotation(t_wf *wf, int key, float ang);
+void                draw_point(t_wf *wf, int x, int y, t_int4 p);
+void                draw_point2(t_wf *wf, int x, int y, t_int4 p);
+void                draw_rectangle(t_wf *wf, t_int4 pos_w, t_int4 color);
+void                draw_rectangle2(t_wf *wf, t_int4 pos_w, t_int4 color);
+void                init_mlx(t_wf *wf);
+void                init_map(t_wf *wf);
+void                image_to_win(t_wf *wf);
+void                image_to_map(t_wf *wf);
+void                draw_walls(t_wf *wf);
+int                 deal_key(int key, void *param);
+void	            calc_map(t_wf *wf);
+void	            calc(t_wf *wf);
 #endif

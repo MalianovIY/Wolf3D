@@ -2715,6 +2715,87 @@ libgm/gm_vec_vec_rotate.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.s
 .PHONY : libgm/gm_vec_vec_rotate.c.s
 
+src/controls.o: src/controls.c.o
+
+.PHONY : src/controls.o
+
+# target to build an object file
+src/controls.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/controls.c.o
+.PHONY : src/controls.c.o
+
+src/controls.i: src/controls.c.i
+
+.PHONY : src/controls.i
+
+# target to preprocess a source file
+src/controls.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/controls.c.i
+.PHONY : src/controls.c.i
+
+src/controls.s: src/controls.c.s
+
+.PHONY : src/controls.s
+
+# target to generate assembly for a file
+src/controls.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/controls.c.s
+.PHONY : src/controls.c.s
+
+src/drawer.o: src/drawer.c.o
+
+.PHONY : src/drawer.o
+
+# target to build an object file
+src/drawer.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/drawer.c.o
+.PHONY : src/drawer.c.o
+
+src/drawer.i: src/drawer.c.i
+
+.PHONY : src/drawer.i
+
+# target to preprocess a source file
+src/drawer.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/drawer.c.i
+.PHONY : src/drawer.c.i
+
+src/drawer.s: src/drawer.c.s
+
+.PHONY : src/drawer.s
+
+# target to generate assembly for a file
+src/drawer.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/drawer.c.s
+.PHONY : src/drawer.c.s
+
+src/init_everything.o: src/init_everything.c.o
+
+.PHONY : src/init_everything.o
+
+# target to build an object file
+src/init_everything.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/init_everything.c.o
+.PHONY : src/init_everything.c.o
+
+src/init_everything.i: src/init_everything.c.i
+
+.PHONY : src/init_everything.i
+
+# target to preprocess a source file
+src/init_everything.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/init_everything.c.i
+.PHONY : src/init_everything.c.i
+
+src/init_everything.s: src/init_everything.c.s
+
+.PHONY : src/init_everything.s
+
+# target to generate assembly for a file
+src/init_everything.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/init_everything.c.s
+.PHONY : src/init_everything.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2741,6 +2822,33 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/raycasting.o: src/raycasting.c.o
+
+.PHONY : src/raycasting.o
+
+# target to build an object file
+src/raycasting.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/raycasting.c.o
+.PHONY : src/raycasting.c.o
+
+src/raycasting.i: src/raycasting.c.i
+
+.PHONY : src/raycasting.i
+
+# target to preprocess a source file
+src/raycasting.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/raycasting.c.i
+.PHONY : src/raycasting.c.i
+
+src/raycasting.s: src/raycasting.c.s
+
+.PHONY : src/raycasting.s
+
+# target to generate assembly for a file
+src/raycasting.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3D.dir/build.make CMakeFiles/Wolf3D.dir/src/raycasting.c.s
+.PHONY : src/raycasting.c.s
 
 src/reader.o: src/reader.c.o
 
@@ -3066,9 +3174,21 @@ help:
 	@echo "... libgm/gm_vec_vec_rotate.o"
 	@echo "... libgm/gm_vec_vec_rotate.i"
 	@echo "... libgm/gm_vec_vec_rotate.s"
+	@echo "... src/controls.o"
+	@echo "... src/controls.i"
+	@echo "... src/controls.s"
+	@echo "... src/drawer.o"
+	@echo "... src/drawer.i"
+	@echo "... src/drawer.s"
+	@echo "... src/init_everything.o"
+	@echo "... src/init_everything.i"
+	@echo "... src/init_everything.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/raycasting.o"
+	@echo "... src/raycasting.i"
+	@echo "... src/raycasting.s"
 	@echo "... src/reader.o"
 	@echo "... src/reader.i"
 	@echo "... src/reader.s"

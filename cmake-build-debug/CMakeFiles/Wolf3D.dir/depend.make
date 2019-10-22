@@ -312,11 +312,35 @@ CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o: ../libft/libft.h
 CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o: ../libgm/gm_vec_vec_rotate.c
 CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o: ../libgm/include/libgm.h
 
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../includes/wolf3d.h
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../libft/get_next_line.h
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../libft/libft.h
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../libgm/include/libgm.h
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../src/controls.c
+
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../includes/wolf3d.h
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../libft/get_next_line.h
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../libft/libft.h
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../libgm/include/libgm.h
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../src/drawer.c
+
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../includes/wolf3d.h
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../libft/get_next_line.h
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../libft/libft.h
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../libgm/include/libgm.h
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../src/init_everything.c
+
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../includes/wolf3d.h
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../libft/get_next_line.h
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../libft/libft.h
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../libgm/include/libgm.h
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../src/main.c
+
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../includes/wolf3d.h
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../libft/get_next_line.h
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../libft/libft.h
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../libgm/include/libgm.h
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../src/raycasting.c
 
 CMakeFiles/Wolf3D.dir/src/reader.c.o: ../includes/wolf3d.h
 CMakeFiles/Wolf3D.dir/src/reader.c.o: ../libft/get_next_line.h

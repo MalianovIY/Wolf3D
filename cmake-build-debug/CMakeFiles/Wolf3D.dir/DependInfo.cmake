@@ -100,7 +100,11 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cmicha/Desktop/wolf3d_git/libgm/gm_vec_reflect.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/libgm/gm_vec_reflect.c.o"
   "/Users/cmicha/Desktop/wolf3d_git/libgm/gm_vec_subtract.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/libgm/gm_vec_subtract.c.o"
   "/Users/cmicha/Desktop/wolf3d_git/libgm/gm_vec_vec_rotate.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o"
+  "/Users/cmicha/Desktop/wolf3d_git/src/controls.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/controls.c.o"
+  "/Users/cmicha/Desktop/wolf3d_git/src/drawer.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/drawer.c.o"
+  "/Users/cmicha/Desktop/wolf3d_git/src/init_everything.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/init_everything.c.o"
   "/Users/cmicha/Desktop/wolf3d_git/src/main.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/main.c.o"
+  "/Users/cmicha/Desktop/wolf3d_git/src/raycasting.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/raycasting.c.o"
   "/Users/cmicha/Desktop/wolf3d_git/src/reader.c" "/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir/src/reader.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

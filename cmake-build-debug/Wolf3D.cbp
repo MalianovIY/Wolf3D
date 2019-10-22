@@ -381,7 +381,19 @@
 		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/libgm/include/libgm.h">
 			<Option target="Wolf3D"/>
 		</Unit>
+		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/controls.c">
+			<Option target="Wolf3D"/>
+		</Unit>
+		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/drawer.c">
+			<Option target="Wolf3D"/>
+		</Unit>
+		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/init_everything.c">
+			<Option target="Wolf3D"/>
+		</Unit>
 		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/main.c">
+			<Option target="Wolf3D"/>
+		</Unit>
+		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/raycasting.c">
 			<Option target="Wolf3D"/>
 		</Unit>
 		<Unit filename="/Users/cmicha/Desktop/wolf3d_git/src/reader.c">

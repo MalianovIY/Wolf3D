@@ -18,5 +18,5 @@ link_libraries(mlx)
 find_library(OPEN_GL OpenGL)
 find_library(APP_KIT AppKit)
 
-add_executable(Wolf3D ${HEADERS} ${SOURCES} ${HEADERS1} ${SOURCES1} ${HEADERS2} ${SOURCES2} src/main.c src/reader.c libft/get_next_line.c)
+add_executable(Wolf3D ${HEADERS} ${SOURCES} ${HEADERS1} ${SOURCES1} ${HEADERS2} ${SOURCES2} src/main.c src/reader.c libft/get_next_line.c src/controls.c src/drawer.c src/init_everything.c src/raycasting.c)
 target_link_libraries(Wolf3D ${OPEN_GL} ${APP_KIT})

@@ -1305,9 +1305,48 @@ CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/libgm/gm_vec_vec_rotate.c -o CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.s
 
+CMakeFiles/Wolf3D.dir/src/controls.c.o: CMakeFiles/Wolf3D.dir/flags.make
+CMakeFiles/Wolf3D.dir/src/controls.c.o: ../src/controls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/Wolf3D.dir/src/controls.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/controls.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/controls.c
+
+CMakeFiles/Wolf3D.dir/src/controls.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3D.dir/src/controls.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cmicha/Desktop/wolf3d_git/src/controls.c > CMakeFiles/Wolf3D.dir/src/controls.c.i
+
+CMakeFiles/Wolf3D.dir/src/controls.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/src/controls.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/src/controls.c -o CMakeFiles/Wolf3D.dir/src/controls.c.s
+
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: CMakeFiles/Wolf3D.dir/flags.make
+CMakeFiles/Wolf3D.dir/src/drawer.c.o: ../src/drawer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/Wolf3D.dir/src/drawer.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/drawer.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/drawer.c
+
+CMakeFiles/Wolf3D.dir/src/drawer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3D.dir/src/drawer.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cmicha/Desktop/wolf3d_git/src/drawer.c > CMakeFiles/Wolf3D.dir/src/drawer.c.i
+
+CMakeFiles/Wolf3D.dir/src/drawer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/src/drawer.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/src/drawer.c -o CMakeFiles/Wolf3D.dir/src/drawer.c.s
+
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: CMakeFiles/Wolf3D.dir/flags.make
+CMakeFiles/Wolf3D.dir/src/init_everything.c.o: ../src/init_everything.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/Wolf3D.dir/src/init_everything.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/init_everything.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/init_everything.c
+
+CMakeFiles/Wolf3D.dir/src/init_everything.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3D.dir/src/init_everything.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cmicha/Desktop/wolf3d_git/src/init_everything.c > CMakeFiles/Wolf3D.dir/src/init_everything.c.i
+
+CMakeFiles/Wolf3D.dir/src/init_everything.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/src/init_everything.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/src/init_everything.c -o CMakeFiles/Wolf3D.dir/src/init_everything.c.s
+
 CMakeFiles/Wolf3D.dir/src/main.c.o: CMakeFiles/Wolf3D.dir/flags.make
 CMakeFiles/Wolf3D.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/Wolf3D.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/Wolf3D.dir/src/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/main.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/main.c
 
 CMakeFiles/Wolf3D.dir/src/main.c.i: cmake_force
@@ -1318,9 +1357,22 @@ CMakeFiles/Wolf3D.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/src/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/src/main.c -o CMakeFiles/Wolf3D.dir/src/main.c.s
 
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: CMakeFiles/Wolf3D.dir/flags.make
+CMakeFiles/Wolf3D.dir/src/raycasting.c.o: ../src/raycasting.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/Wolf3D.dir/src/raycasting.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/raycasting.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/raycasting.c
+
+CMakeFiles/Wolf3D.dir/src/raycasting.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3D.dir/src/raycasting.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cmicha/Desktop/wolf3d_git/src/raycasting.c > CMakeFiles/Wolf3D.dir/src/raycasting.c.i
+
+CMakeFiles/Wolf3D.dir/src/raycasting.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3D.dir/src/raycasting.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cmicha/Desktop/wolf3d_git/src/raycasting.c -o CMakeFiles/Wolf3D.dir/src/raycasting.c.s
+
 CMakeFiles/Wolf3D.dir/src/reader.c.o: CMakeFiles/Wolf3D.dir/flags.make
 CMakeFiles/Wolf3D.dir/src/reader.c.o: ../src/reader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/Wolf3D.dir/src/reader.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/Wolf3D.dir/src/reader.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3D.dir/src/reader.c.o   -c /Users/cmicha/Desktop/wolf3d_git/src/reader.c
 
 CMakeFiles/Wolf3D.dir/src/reader.c.i: cmake_force
@@ -1429,7 +1481,11 @@ Wolf3D_OBJECTS = \
 "CMakeFiles/Wolf3D.dir/libgm/gm_vec_reflect.c.o" \
 "CMakeFiles/Wolf3D.dir/libgm/gm_vec_subtract.c.o" \
 "CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o" \
+"CMakeFiles/Wolf3D.dir/src/controls.c.o" \
+"CMakeFiles/Wolf3D.dir/src/drawer.c.o" \
+"CMakeFiles/Wolf3D.dir/src/init_everything.c.o" \
 "CMakeFiles/Wolf3D.dir/src/main.c.o" \
+"CMakeFiles/Wolf3D.dir/src/raycasting.c.o" \
 "CMakeFiles/Wolf3D.dir/src/reader.c.o"
 
 # External object files for target Wolf3D
@@ -1531,11 +1587,15 @@ Wolf3D: CMakeFiles/Wolf3D.dir/libgm/gm_vec_ortog.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/libgm/gm_vec_reflect.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/libgm/gm_vec_subtract.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/libgm/gm_vec_vec_rotate.c.o
+Wolf3D: CMakeFiles/Wolf3D.dir/src/controls.c.o
+Wolf3D: CMakeFiles/Wolf3D.dir/src/drawer.c.o
+Wolf3D: CMakeFiles/Wolf3D.dir/src/init_everything.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/src/main.c.o
+Wolf3D: CMakeFiles/Wolf3D.dir/src/raycasting.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/src/reader.c.o
 Wolf3D: CMakeFiles/Wolf3D.dir/build.make
 Wolf3D: CMakeFiles/Wolf3D.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Linking C executable Wolf3D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Linking C executable Wolf3D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Wolf3D.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
