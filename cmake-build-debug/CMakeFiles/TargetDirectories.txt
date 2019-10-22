@@ -1,3 +1,0 @@
-/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/cmicha/Desktop/wolf3d_git/cmake-build-debug/CMakeFiles/Wolf3D.dir
