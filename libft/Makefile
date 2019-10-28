@@ -3,32 +3,34 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cmicha <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/03 16:44:45 by cmicha            #+#    #+#              #
-#    Updated: 2019/04/05 17:13:14 by cmicha           ###   ########.fr        #
+#    Created: 2018/11/20 23:48:56 by ahorker           #+#    #+#              #
+#    Updated: 2019/01/13 22:10:02 by ahorker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+FLAGS = -Wall -Wextra -Werror
+OPT = -I $(HEADER) -c
 NAME = libft.a
+HEADER = ./includes
+FUNCS = $(shell cat ./includes/libft.h | grep -Eo "ft_\w+")
+SRC = $(FUNCS:=.c)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-OBJ = $(patsubst %.c,%.o,$(wildcard *.c))
-
 $(NAME): $(OBJ)
-	ar rc $(NAME) $^
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc -Wall -Werror -Wextra -c $^ -o $@
+	gcc $(FLAGS) $(OPT) $<
 
 clean:
-	rm -rf *.o
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -rf libft.a
+	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

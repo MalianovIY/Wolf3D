@@ -13,7 +13,7 @@
 #ifndef LIBGM_H
 # define LIBGM_H
 
-# include "../../libft/libft.h"
+# include "../../libft/includes/libft.h"
 # include <math.h>
 
 typedef struct		s_float4

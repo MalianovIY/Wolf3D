@@ -1,6 +1,6 @@
-NAME = RTv1
+NAME = Wolf3D
 WFLAGS = -Wall -Werror -Wextra
-SRC = ./src/cone.c ./src/control.c ./src/cylinder.c ./src/get_pixel_color.c ./src/image.c ./src/init_scene.c ./src/lightning.c ./src/main.c ./src/plane.c ./src/sphere.c
+SRC = ./src/controls.c ./src/drawer.c ./src/raycastmap.c ./src/main.c ./src/raycasting.c ./src/reader.c
 OBJ = $(SRC:.c=.o)
 INC = -I ./libgm/include -I ./libft/includes -I ./includes
 LIBFT = -L ./libft -lft

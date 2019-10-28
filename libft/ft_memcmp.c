@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 18:18:16 by mriley            #+#    #+#             */
-/*   Updated: 2019/04/18 21:07:54 by mriley           ###   ########.fr       */
+/*   Created: 2018/11/25 01:28:24 by ahorker           #+#    #+#             */
+/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-int	ft_memcmp(const void *m1, const void *m2, size_t num)
+int	ft_memcmp(const void *a, const void *b, size_t n)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	unsigned char	*c;
+	unsigned char	*d;
+	int				o;
 
-	p1 = (unsigned char*)m1;
-	p2 = (unsigned char*)m2;
-	i = 0;
-	if (num == 0)
+	if ((a == NULL && b == NULL) || n == 0)
 		return (0);
-	while (p1[i] == p2[i] && i < (num - 1))
+	c = (unsigned char *)a;
+	d = (unsigned char *)b;
+	o = *c - *d;
+	while (!o && n)
 	{
-		i++;
+		o = *c++ - *d++;
+		n--;
 	}
-	return (p1[i] - p2[i]);
+	return (o);
 }

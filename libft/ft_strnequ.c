@@ -3,30 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 16:38:55 by mriley            #+#    #+#             */
-/*   Updated: 2019/04/18 17:29:50 by mriley           ###   ########.fr       */
+/*   Created: 2018/11/27 17:33:58 by ahorker           #+#    #+#             */
+/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+int	ft_strnequ(const char *c1, const char *c2, size_t n)
 {
-	int i;
-
-	i = 0;
-	if (s1 && s2)
-	{
-		while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < (int)n)
-		{
-			i++;
-		}
-		if ((s1[i] == '\0' && s2[i] == '\0') || (i == (int)n))
-			return (1);
-		else
+	if (c1 == NULL || c2 == NULL || n == 0)
+		return (1);
+	while (*c1 && *c2 && n--)
+		if (*c1++ != *c2++)
 			return (0);
-	}
-	return (0);
+	if ((*c1 && !(*c2)) || (!(*c1) && *c2))
+		return (0);
+	return (1);
 }

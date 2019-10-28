@@ -3,53 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 20:32:40 by mriley            #+#    #+#             */
-/*   Updated: 2019/04/18 15:43:31 by mriley           ###   ########.fr       */
+/*   Created: 2018/12/03 06:19:38 by ahorker           #+#    #+#             */
+/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-static void		num(long n, long u, long y, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (u > 0)
-	{
-		u = u / 10;
-		y = y * 10;
-	}
-	y = y / 10;
-	while (y >= 1)
-	{
-		u = n / y + 48;
-		write(fd, &u, 1);
-		n = n % y;
-		y = y / 10;
-	}
-}
+	long long int	x[3];
+	char			s[12];
 
-void			ft_putnbr_fd(int n, int fd)
-{
-	long long		u;
-	long long		y;
-
-	y = 1;
-	if (n == 0)
-		write(fd, "0", 1);
-	else
-	{
-		if (n == -2147483648)
-			write(fd, "-2147483648", 12);
-		else
-		{
-			if (n < 0 && n > -2147483648)
-			{
-				write(fd, "-", 1);
-				n = n * (-1);
-			}
-			u = n;
-			num(n, u, y, fd);
-		}
-	}
+	x[2] = n;
+	if ((x[1] = x[2]) < 0)
+		x[2] = -x[2];
+	x[0] = 0;
+	s[x[0]] = x[2] % 10 + '0';
+	while ((x[2] /= 10) > 0)
+		s[++x[0]] = x[2] % 10 + '0';
+	s[++x[0]] = x[2] % 10 + '0';
+	if (x[1] < 0)
+		s[x[0]++] = '-';
+	s[x[0]] = '\0';
+	ft_putstr_fd(ft_strrev(s), fd);
 }

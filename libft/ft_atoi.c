@@ -3,57 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 16:47:00 by mriley            #+#    #+#             */
-/*   Updated: 2019/04/18 16:06:30 by mriley           ###   ########.fr       */
+/*   Created: 2018/08/24 21:23:58 by ahorker           #+#    #+#             */
+/*   Updated: 2018/12/19 20:56:12 by ahorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-static int	ft_sign(char i)
+int	ft_atoi(const char *str)
 {
-	int sign;
+	long int	num;
+	int			s;
 
-	if (i == 45)
-		sign = -1;
-	else
-		sign = 1;
-	return (sign);
-}
-
-static int	maxmin(int sign)
-{
-	if (sign == -1)
+	num = 0;
+	s = 1;
+	if (str == NULL)
 		return (0);
-	else
-		return (-1);
-}
-
-int			ft_atoi(const char *str)
-{
-	long			i;
-	long			m;
-	int				sign;
-
-	i = 0;
-	m = 0;
-	sign = 1;
-	while (str[i] == '\n' || str[i] == '\t' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	if ((str[i] == 43) || (str[i] == 45))
-		sign = ft_sign(str[++i - 1]);
-	while ((str[i] >= '0') && (str[i] <= '9'))
+	while ((*str <= 13 && *str >= 9) || *str == ' ')
+		str++;
+	if (*str == '-')
 	{
-		if ((m > 2147483648 && sign == -1) || (m > 2147483647 && sign == 1))
-		{
-			m = maxmin(sign);
-			return (m);
-		}
-		m = 10 * m + (str[i] - 48);
-		i++;
+		s = -1;
+		str++;
 	}
-	return (m * sign);
+	else if (*str == '+')
+		str++;
+	while ((*str >= '0' && *str <= '9'))
+		if (num >= 0 && num < 92233720368547758)
+			num = (num * 10) + (*str++ - '0');
+		else if (s == -1)
+			return (0);
+		else
+			return (-1);
+	return ((int)(num * s));
 }

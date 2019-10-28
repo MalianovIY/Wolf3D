@@ -10,19 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	*ft_free2d(void ***x)
 {
-	unsigned char **i;
-	unsigned char **c;
+	unsigned int	i;
+	unsigned char	**c;
 
 	c = *((unsigned char ***)x);
-	i = c - 1;
+	i = -1;
 	if (x != NULL)
 	{
-		while (*(++i))
-			free(*i);
+		if (*x == NULL)
+		{
+			free(c);
+			return (NULL);
+		}
+		while (c[++i])
+			free(c[i]);
 		free(c);
 	}
 	return (NULL);

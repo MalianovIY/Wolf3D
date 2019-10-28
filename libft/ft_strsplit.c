@@ -3,105 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mriley <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ahorker <ahorker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 21:44:30 by mriley            #+#    #+#             */
-/*   Updated: 2019/04/18 18:05:43 by mriley           ###   ########.fr       */
+/*   Created: 2018/11/30 01:01:40 by ahorker           #+#    #+#             */
+/*   Updated: 2019/01/13 22:08:21 by ahorker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-static	int				snt(const char *s, char c, int g)
+char	**ft_strsplit(const char *c, char s)
 {
-	int		i;
-	int		j;
-	int		y;
+	char	**o[2];
+	char	*st;
 
-	i = 0;
-	j = 0;
-	while (j <= g && s[i] != '\0')
-	{
-		y = 0;
-		if ((s[i] != c && s[i + 1] == c) || (s[i] != c &&
-			s[i + 1] == '\0'))
-			j++;
-		if (s[i] != c)
-			y++;
-		i++;
-	}
-	return (y);
-}
-
-static	void			ft_memwdel(unsigned char **d, int g)
-{
-	int		i;
-
-	i = 0;
-	while (i <= g)
-	{
-		free(d[i]);
-		d[i] = NULL;
-		i++;
-	}
-	free(d);
-	d = NULL;
-}
-
-static unsigned char	**ft_memstr(const char *s, char c)
-{
-	int				i;
-	int				j;
-	unsigned char	**d;
-
-	i = -1;
-	j = 0;
-	if (!s || !c)
+	if (c == NULL)
 		return (NULL);
-	while (s[++i] != '\0')
-	{
-		if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == '\0'))
-			j++;
-	}
-	i = -1;
-	d = (unsigned char**)malloc(sizeof(unsigned char*) * (j + 1));
-	if (d == NULL)
+	st = (char *)c;
+	o[0] = (char **)malloc(sizeof(char *) * (ft_wrdcount(st, s) + 1));
+	if (o[0] == NULL)
 		return (NULL);
-	while (++i < j)
-	{
-		d[i] = (unsigned char*)malloc(sizeof(unsigned char*) *
-				(snt(s, c, i) + 1));
-		if (d[i] == NULL)
-			ft_memwdel(d, i);
-	}
-	return (d);
-}
-
-char					**ft_strsplit(char const *s, char c)
-{
-	int				i;
-	int				h;
-	int				r;
-	unsigned char	**d;
-
-	r = 0;
-	d = ft_memstr(s, c);
-	if (s && c && d)
-	{
-		i = 0;
-		while (s[i] != '\0' && snt(s, c, 0) > 0)
+	o[1] = o[0];
+	ft_bzero((void *)o[0], ft_wrdcount(st, s) + 1);
+	o[0][ft_wrdcount(st, s)] = NULL;
+	if (ft_wrdcount(st, s) == 0)
+		return (o[1]);
+	o[0][0] = st;
+	while (*st++)
+		if (*(st - 1) != s && (*st == s || *st == '\0'))
 		{
-			h = -1;
-			while (s[i] == c && s[i] != '\0')
-				i++;
-			while (s[i] != c && s[i] != '\0')
-				d[r][++h] = ((unsigned char*)s)[i++];
-			d[r++][++h] = '\0';
-			while (s[i] == c && s[i] != '\0')
-				i++;
+			*o[0] = ft_strsub(*o[0], 0, st - *o[0]);
+			if (*o[0]++ == NULL)
+				return (ft_free2d((void ***)&(o[1])));
 		}
-		d[r] = 0;
-		return ((char**)d);
-	}
-	return (NULL);
+		else if (*(st - 1) == s && *st != s && *st != '\0')
+			*o[0] = st;
+	return (o[1]);
 }
