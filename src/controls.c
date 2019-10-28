@@ -39,7 +39,8 @@ t_float4	wasd(t_wf *wf, int key)
 		p = gm_init_float(
 				wf->player.v[0] + cos(wf->player.v[2]) * 0.1,
 				wf->player.v[1] + sin(wf->player.v[2]) * 0.1,
-				wf->player.v[2], 0);	else
+				wf->player.v[2], 0);
+	else
 		p = gm_init_float(
 				wf->player.v[0] - cos(wf->player.v[2]) * 0.1,
 				wf->player.v[1] - sin(wf->player.v[2]) * 0.1,
