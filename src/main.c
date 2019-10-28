@@ -55,14 +55,14 @@ int		main(int argc, char *argv[])
 		ft_putendl("Usage: \n$ ./Wolf map.wf");
 		return (0);
 	}
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 3)
+		err_exit(&wf, 15);
 	if ((buf = malloc(10000001 * sizeof(char))) == NULL)
 	{
 		free(buf);
 		ft_putendl("Memory allocated error, no space left\n");
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 3)
-		ft_putendl("Map file does not exist");
 	if (reading(&wf, buf, fd) == -1)
 		err_exit(&wf, 0);
 	init_mlx(&wf);

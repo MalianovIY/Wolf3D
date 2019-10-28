@@ -14,6 +14,8 @@
 
 void	err_exit(t_wf *wf, int c)
 {
+	if (c == 15)
+		ft_putendl("Map file does not exist");
 	if (c == 10)
 		ft_free2d((void ***)&(wf->map));
 	if (c == 5)
